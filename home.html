@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Haven</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body class="bg-red-600">
+    <header class="bg-red-800 text-white text-center py-6">
+        <h1 class="text-5xl">Fashion Haven</h1>
+        <p class="text-lg">Your Style Destination</p>
+    </header>
+
+    <nav class="bg-red-500 text-white py-4">
+        <ul class="flex justify-center space-x-8">
+            <li><a href="home.html" class="hover:underline">Home</a></li>
+            <li><a href="mens.html" class="hover:underline">Mens</a></li>
+            <li><a href="women.html" class="hover:underline">Women</a></li>
+            <li><a href="kids.html" class="hover:underline">Kids</a></li>
+            <li><a href="#" class="hover:underline" id="contact-btn">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="flex flex-col items-center justify-center h-screen text-white text-center relative">
+        <img src="c:\Users\prash\Pictures\wtpractical q\Untitled design.png" alt="Fashionable clothing display" class="absolute inset-0 w-full h-full object-cover opacity-50">
+        <div class="relative z-10">
+            <h2 class="text-6xl mb-4">Discover Your Style</h2>
+            <p class="text-2xl mb-6">Shop the latest trends in fashion for men, women, and kids.</p>
+            <a href="#" class="bg-green-500 text-white px-8 py-4 rounded-full text-lg hover:bg-green-600">Shop Now</a>
+        </div>
+    </main>
+
+  
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <h2 class="text-2xl mb-4">Contact Us</h2>
+            <form>
+                <div class="mb-4">
+                    <label for="name" class="block text-lg">Name:</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-lg">Email:</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-lg">Message:</label>
+                    <textarea id="message" name="message" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required></textarea>
+                </div>
+                <button type="submit" class="bg-green-500 text-white px-8 py-2 rounded-full text-lg hover:bg-green-600">Submit</button>
+            </form>
+            <button id="close-modal" class="mt-4 text-red-500">Close</button>
+        </div>
+    </div>
+
+    <script>
+        
+        const contactModal = document.getElementById('contact-modal');
+        const contactBtn = document.getElementById('contact-btn');
+        const closeModalBtn = document.getElementById('close-modal');
+
+        contactBtn.addEventListener('click', () => {
+            contactModal.style.display = 'block';
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            contactModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === contactModal) {
+                contactModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
